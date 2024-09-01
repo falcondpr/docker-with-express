@@ -25,8 +25,6 @@ Navigate to the project directory in your terminal and build the Docker image us
 docker build -t node-app-image .
 ```
 
-````
-
 ### Run the Docker Container
 
 After building the image, you can run the Docker container with:
@@ -44,4 +42,7 @@ Open your web browser and go to `http://localhost:3000`. You should see a messag
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-````
+
+```
+
+```
