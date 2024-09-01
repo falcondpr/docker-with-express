@@ -29,8 +29,16 @@ docker build -t node-app-image .
 
 After building the image, you can run the Docker container with:
 
+Bash (not working for the moment)
+
 ```bash
-docker run -d -p 3000:3000 --name node-app node-app-image
+docker run -v $PWD:/app -d -p 3000:3000 --name node-app node-app-image
+```
+
+Powershell (works)
+
+```bash
+docker run -v ${pwd}:/app -d -p 3000:3000 --name node-app node-app-image
 ```
 
 This command maps port 3000 of your local machine to port 3000 in the Docker container.
@@ -42,7 +50,3 @@ Open your web browser and go to `http://localhost:3000`. You should see a messag
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
-
-```
