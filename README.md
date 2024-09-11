@@ -55,6 +55,20 @@ Enter the following command in the Powershell
 docker rm node-app -fv
 ```
 
+## Working with Docker Compose
+
+Enter the following command in PowerShell to start the containers and volumes:
+
+```shell
+docker-compose up -d
+```
+
+To stop and remove the containers and volumes, enter the following command:
+
+```shell
+docker-compose down -v
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
