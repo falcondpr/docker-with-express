@@ -29,16 +29,16 @@ docker build -t node-app-image .
 
 After building the image, you can run the Docker container with:
 
-Bash (not working for the moment)
+Bash (currently not working)
 
 ```bash
-docker run -v $PWD:/app -d -p 3000:3000 --name node-app node-app-image
+docker run -v $PWD:/app:ro -v /app/node_modules --env-file ./.env -d -p 3000:4000 --name node-app node-app-image
 ```
 
 Powershell (works)
 
-```bash
-docker run -v ${pwd}:/app -d -p 3000:3000 --name node-app node-app-image
+```shell
+docker run -v ${pwd}:/app:ro -v /app/node_modules --env-file ./.env -d -p 3000:4000 --name node-app node-app-image
 ```
 
 This command maps port 3000 of your local machine to port 3000 in the Docker container.
@@ -46,6 +46,14 @@ This command maps port 3000 of your local machine to port 3000 in the Docker con
 ### Access the Application
 
 Open your web browser and go to `http://localhost:3000`. You should see a message saying "Hi there :D".
+
+### To delete the container and volume
+
+Enter the following command in the Powershell
+
+```shell
+docker rm node-app -fv
+```
 
 ## License
 
